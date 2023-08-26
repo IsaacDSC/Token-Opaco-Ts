@@ -1,0 +1,21 @@
+@token=123123
+@appToken=eyJlbnRlcnByaXNlSWQiOiIxMjMiLCJrZXlJZCI6InNob3J0SWQiLCJ0eXBlIjoic2hvcnQifQ==
+@cookie= '_gcl_au=1.1.1686876725.1687295765; _tt_enable_cookie=1; _ttp=GcdsfA29V9STN_tt0I5r5ZbokUG; _fbp=fb.1.1687295765495.1035693949; token=123123; user={"id":"fackeId","userId":"fackeuserId","name":"fackeName","email":"fackemailer@gmail.com","phone":"99","status":true,"type":"admin","enterpriseId":"fackeEnterpriseId","EnterpriseOnUser":[{"enterpriseId":"fackeEnterpriseId","enterprise":{"id":"fackeId","fantasyName":"fackeFantasyName","logo":"https://oli-upload-files.s3.amazonaws.com/1d08ebf5d6ed792f1ab69eee40c5002d-Logo%20Oli-md.jpeg","Brands":[],"Organizations":[],"Store":[]}}],"enterprise":{"id":"fackeId","fantasyName":"fackeFantasyName","logo":"https://facke-image.jpeg"},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM1MDdkYTIyLTY3NGEtNGZkNy05NWU4LWQ2M2MxYTY5NGMwYiIsImlhdCI6MTY5MTA3Mzk1NX0.kYmBlmjgNLtt6Hm05cya6n-L_uD4Z47g15act4Cyyvg"}; _ga_3XJ6X5KBQM=GS1.1.1692202419.20.0.1692202419.60.0.0; _ga=GA1.1.1864412309.1687295765'
+
+###
+POST http://localhost:3000/generate-token
+Content-Type: application/json
+
+{
+  "enterpriseId": "123",
+  "keyId": "shortId",
+  "type": "short"
+}
+
+
+###
+GET http://localhost:3000/protected
+Content-Type: application/json
+Authorization: {{token}}
+AppToken: {{appToken}}
+cookie: {{cookie}}
